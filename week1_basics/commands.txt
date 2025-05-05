@@ -1,0 +1,11 @@
+pwd              # Show current directory
+ls -l            # List files with details
+cd /             # Go to root directory
+cd ~             # Go to home
+mkdir testdir    # Create directory
+touch file.txt   # Create file
+nano file.txt    # Edit file
+cat file.txt     # View contents
+rm file.txt      # Delete file
+rmdir testdir    # Remove empty directory
+
