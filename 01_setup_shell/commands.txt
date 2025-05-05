@@ -1,0 +1,35 @@
+pwd              # Show current directory
+ls -l            # List files with details
+cd /             # Go to root directory
+cd ~             # Go to home
+mkdir testdir    # Create directory
+touch file.txt   # Create file
+nano file.txt    # Edit file
+cat file.txt     # View contents
+rm file.txt      # Delete file
+rmdir testdir    # Remove empty directory
+
+# Task 1: Identify the OS
+uname -a
+lsb_release -a
+
+# Task 2: Check system resources
+df -h
+free -m
+
+# Task 3: Folder setup for mock web host
+mkdir -p ~/hostpro/www ~/hostpro/logs ~/hostpro/backups
+
+# Task 4: Create a sample HTML file
+touch ~/hostpro/www/index.html
+echo "<h1>Welcome to My Test Server</h1>" > ~/hostpro/www/index.html
+
+# Task 5: Edit index.html with nano
+nano ~/hostpro/www/index.html
+
+# Task 6: Navigation and history
+cd ~
+ls -l
+pwd
+history
+
