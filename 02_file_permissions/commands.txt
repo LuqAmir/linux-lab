@@ -1,0 +1,21 @@
+# Task 1: Create hosting folder structure
+cd ~
+mkdir -p hostpro/clients/{client1,client2}
+mkdir -p hostpro/backups
+mkdir -p hostpro/logs
+
+# Task 2: Add dummy HTML file for each client
+echo "Welcome to Client 1's website" > ~/hostpro/clients/client1/index.html
+echo "Welcome to Client 2's website" > ~/hostpro/clients/client2/index.html
+
+# Task 3: Set ownership to your user
+sudo chown -R $USER:$USER ~/hostpro
+
+# Task 4: Set folder permissions
+chmod -R 755 ~/hostpro/clients
+chmod -R 700 ~/hostpro/backups
+chmod -R 700 ~/hostpro/logs
+
+# Task 5: Verify structure and permissions
+cd ~/hostpro
+ls -lR

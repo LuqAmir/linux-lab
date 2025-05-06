@@ -1,0 +1,32 @@
+# TASK 1 -> CREATE SHARED DIRECTORY
+sudo mkdir -p /var/www/clientsite
+
+# TASK 2 -> CREATE USER AND GROUP
+sudo adduser client1
+sudo adduser client2
+sudo groupadd webdevs
+
+# TASK 3 -> ADD USER TO GROUP 
+sudo usermod -aG webdevs client1
+sudo usermod -aG webdevs client2
+
+# TASK 4 -> ASSIGN GROUP OWNERSHIP TO FOLDER
+sudo chown -R root:webdevs /var/www/clientsite
+
+# TASK 5 -> SET PERMISSION
+sudo chmod -R 770 /var/www/clientsite
+
+# TASK 6 -> SET STICKY GROUP ID ON DIRECTORY
+sudo chmod g+s /var/www/clientsite
+
+# TASK 7 -> TEST PERMISSION
+sudo -i -u client1
+cd /var/www/clientsite
+touch test_by_client1.txt
+exit
+
+sudo -i -u client2
+cd /var/www/clientsite
+ls -l
+exit
+
