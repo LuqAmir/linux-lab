@@ -1,0 +1,8 @@
+sudo apt update
+sudo apt upgrade -y
+sudo apt install curl git htop tree -y
+curl --version
+git --version
+htop --version
+tree --version
+sudo apt autoremove -y
