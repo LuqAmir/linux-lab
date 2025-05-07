@@ -6,3 +6,28 @@ git --version
 htop --version
 tree --version
 sudo apt autoremove -y
+
+# 1. Create the web directory
+mkdir -p ~/hostpro/www
+
+# 2. Create a basic HTML page
+echo "<h1>Welcome to HostPro Web Server</h1>" > ~/hostpro/www/index.html
+
+# 3. Fix directory permissions for Apache access
+sudo chmod o+x /home
+sudo chmod o+x /home/mis
+sudo chmod o+x /home/mis/hostpro
+sudo chmod -R 755 ~/hostpro/www
+
+# 4. Edit Apache configuration to allow access to this directory
+sudo nano /etc/apache2/apache2.conf
+
+# (Inside nano, add at the bottom)
+<Directory /home/mis/hostpro/www>
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    Require all granted
+</Directory>
+
+# 5. Restart Apache to apply changes
+sudo systemctl restart apache2
